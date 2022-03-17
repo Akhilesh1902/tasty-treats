@@ -1,0 +1,69 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  padding: 1em 0;
+  color: #fbfeff;
+  font-size: 1.2rem;
+  position: fixed;
+  /* background-color: rgb(75, 75, 75); */
+  z-index: 10;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  /* font-family: "Playfair Display", serif; */
+}
+.logo h2 {
+  font-weight: 400;
+  font-style: italic;
+}
+.logo:hover {
+  cursor: pointer;
+}
+.logo svg {
+  flex: 1;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5em;
+}
+.navlist {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+  margin-right: 2.5em;
+}
+.navlist a {
+  text-decoration: none;
+  font-family: var(--rb-font-);
+  color: #fbfeff;
+  font-weight: bold;
+  transition: color 0.5s ease-in-out;
+}
+.navlist a.active {
+  color: hsl(var(--accent-clr));
+}
+.hamburgerMenu {
+  display: none;
+}
+
+@media screen and (max-width: 620px) {
+  .navlist {
+    /* display: none; */
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 0.3s ease-in-out;
+  }
+  .navlist.show {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .hamburgerMenu {
+    display: block;
+  }
+}

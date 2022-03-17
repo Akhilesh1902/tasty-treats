@@ -1,0 +1,74 @@
+.cardDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #9b4712;
+}
+.cardDiv > h1 {
+  font-family: var(--pf-font-);
+  color: hsl(var(--white-clr));
+  margin-left: 2em;
+  margin-top: 1em;
+  position: relative;
+}
+.cardDiv > h1::before {
+  display: block;
+  content: "";
+  width: 30%;
+  height: 3px;
+  background-color: hsl(var(--white-clr));
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+}
+.cardWrapper {
+  width: 90%;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardContainer {
+  display: flex;
+  width: 30%;
+  max-width: 320px;
+  flex-direction: column;
+  margin: 2em;
+  background: hsl(var(--white-clr));
+  border-radius: 1em;
+}
+.cardContainer .imgContainer {
+  max-width: none;
+}
+.cardContainer img {
+  border-radius: 1em;
+}
+.cardContainer .details {
+  margin-top: 1em;
+  width: 100%;
+  padding: 1em 0.5em;
+}
+.cardContainer h2 {
+  font-size: 1.5rem;
+}
+
+.cardContainer p {
+  font-size: 1.25rem;
+  padding-bottom: 3em;
+}
+
+@media screen and (max-width: 620px) {
+  .cardWrapper {
+    flex-direction: column;
+  }
+  .cardContainer {
+    width: 100%;
+  }
+  .cardDiv > h1 {
+    margin-left: 0.5em;
+  }
+  .cardDiv > h1::before {
+    width: 70%;
+  }
+}

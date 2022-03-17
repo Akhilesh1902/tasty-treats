@@ -1,0 +1,51 @@
+:root {
+  --white-clr: 0 0% 94%;
+  --accent-clr: 24 100% 47%;
+  --primary-clr: 212 23% 15%;
+  --pf-font-: "Playfair Display", serif;
+  --rb-font-: "Roboto", sans-serif;
+  --l2-font-: "Lobster Two", cursive;
+}
+
+@import url("./navBar.css");
+@import url("./hero.css");
+@import url("./imagesection.css");
+@import url("./Cards.css");
+@import url("./Footer.css");
+@import url("./Cuisine.css");
+.App {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* position: relative; */
+}
+
+/*
+
+font-family: 'Lobster Two', cursive;
+font-family: 'Playfair Display', serif;
+font-family: 'Roboto', sans-serif;
+*/
+
+.btn {
+  padding: 0.5em 2em;
+  border: none;
+  background: hsl(var(--accent-clr));
+  font-size: 1.5rem;
+  font-family: var(--l2-font-);
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  color: var(--white-clr-);
+  border-radius: 0.5em;
+}
+.btn:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 620px) {
+  .btn {
+    font-size: 1rem;
+  }
+}
