@@ -42,9 +42,14 @@
   padding-inline: 1.5em;
 }
 
+.contactHead {
+  font-family: var(--rb-font-);
+  color: hsl(var(--white-clr));
+  padding-inline: 0;
+}
 @media screen and (max-width: 620px) {
   .footerContainer {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
   .footerForm {

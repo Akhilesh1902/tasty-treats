@@ -10,6 +10,13 @@ const PageFooter = () => {
       className="containerWrapper"
       style={{ background: `hsl(212 23% 15%)` }}>
       <div className="container footerContainer">
+        <form className="footerForm">
+          <h1 className="contactHead">Contact</h1>
+          <input type="text" placeholder="Name" required />
+          <input type="email" placeholder="E-mail" required />
+          <textarea cols="30" rows="10" placeholder="Message"></textarea>
+          <button className="btn footerBtn">Submit</button>
+        </form>
         <div className="footerLinks">
           <ul>
             <li>
@@ -35,12 +42,6 @@ const PageFooter = () => {
             <img src={Mail} alt="" />
           </div>
         </div>
-        <form className="footerForm">
-          <input type="text" placeholder="Name" required />
-          <input type="email" placeholder="E-mail" required />
-          <textarea cols="30" rows="10" placeholder="Message"></textarea>
-          <button className="btn footerBtn">Submit</button>
-        </form>
       </div>
     </div>
   )
