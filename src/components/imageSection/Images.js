@@ -11,6 +11,8 @@ const Images = () => {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel"
         }
         rotation={"-20deg"}
+        bg={`hsl(0 0% 94%)`}
+        col={`hsl212 23% 15%)`}
       />
       <Imagesection
         src={1}

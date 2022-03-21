@@ -31,7 +31,7 @@
 
 .cardContainer {
   display: flex;
-  width: 30%;
+  width: 100%;
   max-width: 320px;
   flex-direction: column;
   margin: 2em;
