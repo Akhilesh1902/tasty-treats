@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: none;
 }
 html {
   scroll-behavior: smooth;
@@ -19,10 +20,10 @@ body {
   width: 100%;
   font-family: var(--l2-font-);
   overflow-x: hidden;
-  /* background-color: hsl(var(--primary-clr)); */
   background: #000;
 }
-body::-webkit-scrollbar {
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
   width: 0;
   /* behavior: smooth; */
 }
