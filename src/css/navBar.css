@@ -2,14 +2,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
-  padding: 1em 0;
+  width: 100%;
+  padding: 1em 2.5em;
   color: #fbfeff;
   font-size: 1.2rem;
   position: fixed;
   /* background-color: rgb(75, 75, 75); */
   z-index: 10;
+  transition: background-color 0.5s ease-in-out;
 }
+.navBar-scrolled {
+  background-color: hsl(var(--primary-clr));
+}
+
 .logo {
   display: flex;
   align-items: center;

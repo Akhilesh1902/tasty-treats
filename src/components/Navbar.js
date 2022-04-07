@@ -1,11 +1,12 @@
-import React, { useState } from "react"
-import { IoMdRestaurant } from "react-icons/io"
-import { GiHamburgerMenu } from "react-icons/gi"
-import { NavLink } from "react-router-dom"
-import { motion } from "framer-motion"
+import React, { useState } from "react";
+import { IoMdRestaurant } from "react-icons/io";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
-  const [hamBurgerClick, sethamBurgerClick] = useState(false)
+  const [hamBurgerClick, sethamBurgerClick] = useState(false);
+  const [navScroll, setNavScroll] = useState(false);
 
   const navLinkParent = {
     initial: {
@@ -18,7 +19,18 @@ const Navbar = () => {
         staggerDirection: -1,
       },
     },
-  }
+  };
+
+  const scrollEvent = (e) => {
+    if (window.scrollY >= 300) {
+      setNavScroll(true);
+    } else {
+      setNavScroll(false);
+    }
+  };
+
+  document.addEventListener("scroll", scrollEvent);
+
   const navLinks = {
     initial: {
       x: -25,
@@ -31,10 +43,10 @@ const Navbar = () => {
         duration: 0.8,
       },
     },
-  }
+  };
 
   return (
-    <>
+    <nav className={navScroll ? "navBar navBar-scrolled " : "navBar"}>
       <motion.div
         className="logo"
         initial={{
@@ -45,11 +57,13 @@ const Navbar = () => {
         }}
         transition={{
           duration: 0.5,
-        }}>
+        }}
+      >
         <NavLink
           to="/home"
           className="logo"
-          style={{ textDecoration: "none", color: "hsl(var(--white-clr))" }}>
+          style={{ textDecoration: "none", color: "hsl(var(--white-clr))" }}
+        >
           <IoMdRestaurant />
           <h2>Restaurant</h2>
         </NavLink>
@@ -59,7 +73,8 @@ const Navbar = () => {
         variants={navLinkParent}
         animate="animate"
         initial="initial"
-        className={`navlist ${hamBurgerClick ? "show" : ""}`}>
+        className={`navlist ${hamBurgerClick ? "show" : ""}`}
+      >
         <motion.div variants={navLinks}>
           <NavLink to="/home" className="navLink">
             Home
@@ -79,11 +94,11 @@ const Navbar = () => {
       <GiHamburgerMenu
         className="hamburgerMenu"
         onClick={() => {
-          sethamBurgerClick(!hamBurgerClick)
+          sethamBurgerClick(!hamBurgerClick);
         }}
       />
-    </>
-  )
-}
+    </nav>
+  );
+};
 
-export default Navbar
+export default Navbar;
